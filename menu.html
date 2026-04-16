@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Le Goût</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Le Goût</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="menu.html" class="active">Cardápio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-header">
+      <h2>Nosso Cardápio</h2>
+    </section>
+
+    <div id="catalogo-wrapper">
+      <!-- ======================================================== -->
+      <!-- ESTRUTURA BASE (MOCKADA) - PARA REFERÊNCIA DOS ALUNOS    -->
+      <!-- No app.js, o JavaScript vai montar esta estrutura para   -->
+      <!-- cada categoria da API (Entradas, Pratos Principais, etc) -->
+      <!-- ======================================================== -->
+      <div class="bloco-grupo-pratos" style="margin-bottom: 3rem;">
+
+        <!-- Cabeçalho da Seção com Título e Filtro de Preço -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 1rem; margin-bottom: 2rem;">
+          <h2>Entradas <span style="font-size: 1rem; color: #888; font-weight: normal;"> - 2 itens</span></h2>
+          <select class="seletor-ordem" style="padding: 0.5rem; border-radius: 4px; border: 1px solid #444; background-color: #222; color: #fff;">
+            <option value="asc">Menor Preço</option>
+            <option value="desc">Maior Preço</option>
+          </select>
+        </div>
+
+        <!-- Grid de Produtos da Categoria -->
+        <div class="grid">
+          <!-- Modelo de Card de Produto -->
+          <div class="card" onclick="window.location.href='detail.html?id=123'" style="cursor: pointer">
+            <img src="https://placehold.co/300x200?text=Sem+Imagem" alt="Nome do Produto" class="card-image" onerror="this.src='https://placehold.co/300x200?text=Sem+Imagem'">
+            <div class="card-body">
+              <span class="card-category text-muted">Entradas</span>
+              <h3 class="card-title">Nome do Produto Mockado</h3>
+              <p class="card-desc">Descrição breve do produto aparecerá aqui...</p>
+              <div class="card-footer">
+                <span class="price">R$ 0,00</span>
+                <button class="btn btn-secondary" onclick="event.stopPropagation(); window.location.href='detail.html?id=123'">
+                  Ver Mais
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Fim do Modelo de Card -->
+        </div>
+
+      </div>
+      <!-- ======================================================== -->
+      <!-- Fim da estrutura mockada. O conteúdo real vai substituir isso -->
+      <!-- ======================================================== -->
+
+      <!-- <div class="loading">Carregando cardápio...</div> -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Le Goût Restaurante. Todos os direitos reservados.</p>
+  </footer>
+  <script src="/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadMenu();
+    });
+  </script>
+</body>
+
+</html>

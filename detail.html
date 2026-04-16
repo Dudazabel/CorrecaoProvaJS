@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Prato - Le Goût</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Le Goût</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="menu.html">Cardápio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="info-prato-view">
+      <div class="detail-container">
+        <img src="https://placehold.co/600x400?text=Sem+Imagem" alt="Nome do Produto" class="detail-image" onerror="this.src='https://placehold.co/600x400?text=Sem+Imagem'">
+        <div class="detail-info">
+          <span class="badge">Categoria</span>
+          <h1 style="margin-top: 1rem; font-size: 2.5rem;">Nome do Produto</h1>
+          <p class="detail-price">R$ 0,00</p>
+          <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Descrição detalhada do produto irá aparecer aqui.
+          </p>
+          <p style="color: var(--text-muted); font-size: 0.9rem">ID: 123</p>
+          <p style="color: var(--primary-color); margin-top: 10px"><i class="fas fa-star"></i> Item em Destaque</p>
+        </div>
+      </div>
+      <!-- Conteúdo carregado via JS 
+      <div class="loading">Carregando detalhes...</div> -->
+    </div>
+
+    <div style="margin-top: 2rem; margin-bottom: 2rem;">
+      <a href="menu.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Voltar ao Cardápio</a>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- ESTRUTURA BASE (MOCKADA) - PARA REFERÊNCIA DOS ALUNOS    -->
+    <!-- No app.js, o JavaScript deve exibir esta seção e         -->
+    <!-- adicionar dinamicamente os cards de "sugestões" aqui     -->
+    <!-- ======================================================== -->
+    <section id="sugestoes-sec" style="margin-top: 4rem;">
+      <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">Mais produtos desta categoria</h2>
+      <div id="sugestoes-grid" class="grid">
+        <!-- Modelo de Card de Produto Sugerido -->
+        <div class="card" onclick="window.location.href='detail.html?id=123'" style="cursor: pointer">
+          <img src="https://placehold.co/300x200?text=Sem+Imagem" alt="Nome do Produto" class="card-image" onerror="this.src='https://placehold.co/300x200?text=Sem+Imagem'">
+          <div class="card-body">
+            <span class="card-category text-muted">Categoria Atual</span>
+            <h3 class="card-title">Nome do Produto Sugerido Mocado</h3>
+            <p class="card-desc">Descrição breve do produto aparecerá aqui...</p>
+            <div class="card-footer">
+              <span class="price">R$ 0,00</span>
+              <button class="btn btn-secondary" onclick="event.stopPropagation(); window.location.href='detail.html?id=123'">
+                Ver Mais
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Fim do Modelo de Card -->
+        <!-- <div class="loading">Carregando sugestões...</div> -->
+      </div>
+    </section>
+    <!-- ======================================================== -->
+    <!-- Fim da estrutura mockada.                                -->
+    <!-- ======================================================== -->
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Le Goût Restaurante. Todos os direitos reservados.</p>
+  </footer>
+  <script src="/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProductDetail();
+    });
+  </script>
+</body>
+
+</html>
